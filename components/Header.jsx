@@ -1,10 +1,13 @@
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput, StyleSheet, Image } from "react-native";
 import React from "react";
 
 const Header = ({ setSearch }) => {
 	return (
 		<View style={styles.header}>
-			<Text style={styles.title}>COINGECKO</Text>
+			<View style={styles.containerTitle}>
+				<Image style={styles.logo} source={require("../assets/icon.png")} />
+				<Text style={styles.title}>COINGECKO</Text>
+			</View>
 			<TextInput
 				placeholder="Search"
 				placeholderTextColor="#c1c1c1"
@@ -36,7 +39,16 @@ const styles = StyleSheet.create({
 		shadowRadius: 10,
 		zIndex: 99,
 	},
+	containerTitle: {
+		flexDirection: "row",
+		alignItems: "center",
+	},
+	logo: {
+		width: 30,
+		height: 30,
+	},
 	title: {
+		marginLeft: 10,
 		fontWeight: "800",
 		fontSize: 20,
 		color: "#1ccc5b",
